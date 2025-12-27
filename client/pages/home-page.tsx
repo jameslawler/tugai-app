@@ -1,16 +1,15 @@
 import type { FC } from "hono/jsx";
+
 import Layout from "../components/layout";
 
-const HomePage: FC<{ messages: string[] }> = (props: {
-  messages: string[];
+const HomePage: FC<{ userName?: string }> = (props: {
+  userName?: string;
 }) => {
   return (
     <Layout>
       <h1>TugAI</h1>
       <ul>
-        {props.messages.map((message) => {
-          return <li>{message}!!</li>;
-        })}
+        Hello {props.userName}
       </ul>
     </Layout>
   );

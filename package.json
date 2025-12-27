@@ -5,13 +5,17 @@
 		"dev": "wrangler dev",
 		"deploy": "wrangler deploy --minify",
 		"htmx": "cp node_modules/htmx.org/dist/htmx.min.js public/htmx.min.js",
-		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings",
+		"db:generate": "drizzle-kit generate"
 	},
 	"dependencies": {
+		"better-auth": "1.4.9",
+		"drizzle-orm": "0.45.1",
 		"hono": "4.11.3",
 		"htmx.org": "2.0.8"
 	},
 	"devDependencies": {
+		"drizzle-kit": "0.31.8",
 		"wrangler": "4.54.0"
 	}
 }
