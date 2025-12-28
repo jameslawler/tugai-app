@@ -1,4 +1,4 @@
-# TugAI
+# portuguese-ai-app
 
 Portuguese Learning AI web application
 

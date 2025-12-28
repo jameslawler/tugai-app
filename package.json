@@ -1,5 +1,5 @@
 {
-	"name": "tugai-app",
+	"name": "portuguese-ai-app",
 	"type": "module",
 	"scripts": {
 		"dev": "wrangler dev",

@@ -22,7 +22,7 @@ auth.post("/sign-up/email", async (c) => {
     await auth.api.signUpEmail({ body });
 
     return c.body(null, 200, {
-      "HX-Redirect": "/",
+      "HX-Redirect": "/signin",
     });
   } catch (err: any) {
     return c.html(
@@ -58,6 +58,26 @@ auth.post("/sign-in/email", async (c) => {
   } catch (err: any) {
     return c.html(
       <AuthSignin errorMessage={err.message} defaultEmail={body.email} />
+    );
+  }
+});
+
+auth.post("/sign-out", async (c) => {
+  const db = getDb(c.env.DB);
+  const auth = getAuth(db);
+
+  try {
+    const response = await auth.api.signOut({
+      asResponse: true,
+      headers: c.req.raw.headers
+    });
+
+    response.headers.set("HX-Redirect", "/");
+
+    return response;
+  } catch (err: any) {
+    return c.html(
+      <AuthSignin errorMessage={err.message} />
     );
   }
 });
