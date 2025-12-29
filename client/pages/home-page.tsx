@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 const HomePage: FC<{ userName?: string }> = (props: { userName?: string }) => {
   return (
     <Layout>
-      <h1>Portuguese AI</h1>
+      <h1 class="text-xl">Portuguese AI</h1>
       {props.userName && (
         <>
           <ul>Hello {props.userName}!</ul>
