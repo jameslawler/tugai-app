@@ -4,6 +4,7 @@ import HomePage from "../../client/pages/home-page";
 import SignupPage from "../../client/pages/signup-page";
 import SigninPage from "../../client/pages/signin-page";
 import BuilderPage from "../../client/pages/builder-page";
+import BuilderListPage from "../../client/pages/builder-list-page";
 
 const web = new Hono<{
   Bindings: CloudflareBindings;
@@ -28,6 +29,10 @@ web.get("/signin", (c) => {
 });
 
 web.get("/editor", (c) => {
+  return c.html(<BuilderListPage plans={["James", "Rita", "Melissa"]} />);
+});
+
+web.get("/editor/edit", (c) => {
   return c.html(<BuilderPage />);
 });
 
